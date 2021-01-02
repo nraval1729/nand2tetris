@@ -27,7 +27,7 @@ class JackTokenizer(object):
         self.current_token_idx += 1
 
     def get_token_type(self):
-        curr_token = self._get_current_token()
+        curr_token = self.get_current_token()
 
         if curr_token in keywords:
             return TokenType.KEYWORD
@@ -41,7 +41,7 @@ class JackTokenizer(object):
             return TokenType.IDENTIFIER
 
     def get_token_value(self):
-        current_token = self._escape_current_token_if_necessary(self._get_current_token())
+        current_token = self._escape_current_token_if_necessary(self.get_current_token())
         if self.get_token_type() == TokenType.INT_CONST:
             return int(current_token)
         elif self.get_token_type() == TokenType.STRING_CONST:
@@ -49,7 +49,7 @@ class JackTokenizer(object):
         else:
             return current_token
 
-    def _get_current_token(self):
+    def get_current_token(self):
         return self.tokens[self.current_token_idx]
 
     def _escape_current_token_if_necessary(self, token):

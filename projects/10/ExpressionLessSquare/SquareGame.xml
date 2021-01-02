@@ -415,7 +415,7 @@
                       <identifier> exit </identifier>
                     </term>
                   </expression>
-                  <symbol> ; </symbol>
+                  <symbol>;</symbol>
                 </letStatement>
               </statements>
               <symbol> } </symbol>
